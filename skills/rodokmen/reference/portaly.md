@@ -359,7 +359,7 @@ Pro předky z pohraničí (Sudety, Slezsko, jižní Morava, Šumava), kteří by
   Pozor: po 1945 se mnohá místa přejmenovala; hledej německý i český název obce i farnosti (převod názvů pomůže katalog obcí GOV, gov.genealogy.net – nevyzkoušeno).
 - **Transportní listiny 1946** (ověřeno 2026-11 na sudetendeutsches-archiv.de/transportlisten-der-vertreibung-1946/ a v jejich „Hinweise … ab 1.10.2026“).
   Sudetendeutsches Museum (Mnichov) má digitalizované kopie asi 1290 transportních listin z roku 1946 s kolem milionem jmen: 55–60 % všech transportů a asi 80 % transportů do
-  americké zóny. Originály jsou ve Vojenském ústředním archivu v Praze (německy Zentrales Militärarchiv; jestli jsou dostupné přímo ve VÚA, nevyzkoušeno).
+  americké zóny. Originály jsou podle muzea v pražském Vojenském ústředním archivu (Zentrales Militärarchiv); jestli je VÚA nabízí badatelům online nebo na dotaz, jsem na webu nenašel – zeptej se archivu.
   **Chybí** transporty do sovětské zóny (v roce 1946 přes 600 transportů, asi 800 000 lidí) a divoký odsun 1945 (žádné listy).
   **Hledání podle jména jde jen na přístroji v muzeu v Mnichově** (z právních důvodů ne online; od 1. 10. 2026 je jmenně prohledatelných 820 000 záznamů, zbytek jako PDF, po konci výstavy
   začátkem 2027 dál v Sudetendeutsches Haus). Muzeum **za vás nehledá**; na písemný dotaz pošle sken jednoho vagonu a titulního listu, když uvedeš přesné datum a místo transportu
@@ -370,10 +370,12 @@ Pro předky z pohraničí (Sudety, Slezsko, jižní Morava, Šumava), kteří by
   sudetendeutsche-familienforscher.de/wp-content/uploads/2020/05/Verzeichnis_Vertreibungstransporte_1946_V9.pdf – z něj zjistíš datum a stanici.
 - **České úřední spisy o odsunu a konfiskacích.** Fondy okresních a místních národních výborů z let 1945–1946 (referáty pro odsun, konfiskace, osídlování; např. ONV Ústí nad Labem
   má v inventáři oddíl o odsunu Němců, fond spravuje SOA Litoměřice). Jsou v okresních archivech a SOA pohraničí; hledej podle obce v archivním katalogu. Které fondy obsahují jmenné soupisy,
-  **ověř** v inventáři nebo dotazem do archivu (zapiš do `archivni_dotazy.md`). Národní archiv: fondy ministerstev (vnitra, ochrany práce a sociální péče) – nevyzkoušeno.
-- **Německá strana (osud po odsunu).** **Lastenausgleichsarchiv Bayreuth (Bundesarchiv)**: akty o vyrovnání škod vyhnanců (adresy, majetek, doba odsunu), **Ostdokumentation (B 198)**
-  a kartotéky Heimatortskartei (B 530). Přístup je písemný (dotaz, dotazník, vysvětlení ochrany údajů; kontakt laa@bundesarchiv.de). **Podle přehledu ze 17. 3. 2026 se dotazy
-  z rodinného bádání bez naléhavosti přijímají až od roku 2028 – ověř na bundesarchiv.de.**
+  **ověř** v inventáři nebo dotazem do archivu (zapiš do `archivni_dotazy.md`). Archiv bezpečnostních složek (abscr.cz) má regionální policejní spisy „Odsun Němců 1946“ (např. OV SNB Ostrava-město; podle názvu inventáře, obsah neprověřen). Národní archiv: fondy ministerstev (vnitra, ochrany práce a sociální péče) – nevyzkoušeno.
+- **Německá strana (osud po odsunu).** **Lastenausgleichsarchiv Bayreuth (Bundesarchiv)** – ověřeno 2026-11 na bundesarchiv.de (stránka Bayreuth): knapp 3 miliony akt o vyrovnání škod vyhnanců
+  (majetek, bydliště, doba odchodu), **Ostdokumentation** (sbírka svědectví o vyhnání) a kartotéky **Heimatortskartei** (kartotéky kirchlicher Suchdienst o pohřešovaných civilistech z vyhnaných oblastí,
+  „Einwohnerverzeichnis des deutschen Ostens“). Přístup jen písemně s formuláři (dotazník o užití, vysvětlení účelu). **Od 16. 1. 2026 do 31. 12. 2027 vyřizují jen naléhavé dotazy
+  (např. hledání násilně odloučeného příbuzného); hledání předků v rámci rodinného bádání mezi ně výslovně nepatří a mají se podat znovu od 1. 1. 2028.** Do té doby to není cesta pro rodinný rodokmen.
+  Literaturu (50 000 svazků, adresáře, Heimatzeitschriften) lze číst v čítárně po domluvě.
 - **Po válce v Německu/Rakousku:** Arolsen (`arolsen.py`, vysídlené osoby – spíš nuceně nasazení a DP než odsunutí Němci, ale zkus), farní matriky a občanské matriky v nové obci
   (kde se rodina usadila), Suchdienst (Červený kříž, kirchlicher Suchdienst) – nevyzkoušeno.
 - **Češi, kteří odešli z pohraničí 1938:** uprchlické a vysídlenecké spisy v okresních archivech a v Národním archivu (např. fondy o péči o uprchlíky a o návratu); návod nemám ověřený.
