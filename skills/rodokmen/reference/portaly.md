@@ -349,6 +349,32 @@ Nástroje pro ně hotové nejsou. Postupuj takto a výsledek zapiš do `STAV.md`
   (křestní jméno, rok). Jsou tu jen **zemřelí** v Mauthausenu a pobočkách (Gusen, Ebensee, Melk…), přeživší ne (ty hledej v Arolsenu, viz výše). Jména bývají v místním tvaru (Novak, Nowak).
   Portál nemá robots.txt ani vstupní prohlášení; nástroj jde přes brzdu `slusne.py`. Údaje jsou citlivé – na web jen se souhlasem rodiny (`soukromi.md`).
 
+## Odsun Němců z pohraničí 1945–1946 a Češi vysídlení v roce 1938
+Pro předky z pohraničí (Sudety, Slezsko, jižní Morava, Šumava), kteří byli Němci a po válce museli odejít, a pro Čechy, kteří odešli z pohraničí po záboru 1938.
+**Stav: jen rešerše (2026-11), žádný nástroj; údaje označené „ověř“ jsem z webu nečetl celé. Nic z toho nejde stáhnout skriptem, jde o dopisy a prohlížeč.**
+- **Dvě fáze.** Léto 1945 = takzvaný divoký odsun (vyhánění bez seznamů, zápisy chybí nebo jsou neúplné). 1946 = organizovaný odsun v transportech do
+  americké a sovětské okupační zóny. Zachované **transportní listiny** (kdo odjel, kterým transportem a kdy) jsou **z roku 1946, ne z roku 1945**.
+- **Matriky zůstaly v českých archivech.** Německé matriky z odsunutých obcí jsou v archivech pohraničí (SOA Litoměřice, SOA Plzeň/Porta fontium, ZA Opava),
+  postup viz příslušné oddíly výše. Ze zápisu zjistíš narození, sňatky a úmrtí do odsunu; **odsun sám a osud po něm v matrice nenajdeš**.
+  Pozor: po 1945 se mnohá místa přejmenovala; hledej německý i český název obce i farnosti (převod názvů pomůže katalog obcí GOV, gov.genealogy.net – nevyzkoušeno).
+- **Transportní listiny 1946.** Dotazy přijímá **Sudetendeutsches Archiv / Sudetendeutsches Institut (Mnichov)**: podle jejich informačního listu
+  (sudetendeutsches-archiv.de, „Transportlisten der Vertreibung 1946 – Information für Anfragen“) dává na písemný dotaz jednotlivé informace v omezeném rozsahu;
+  dotaz musí obsahovat úplnou poštovní adresu odesílatele. Sudetendeutsches Museum připravovalo na první pololetí 2026 hledání v digitalizovaných
+  kopiích asi 1000 listin uložených v ČR – **ověř, zda už funguje**. Přehled transportů 1946 (Wilhelm Jun) nabízejí sudetoněmečtí genealogové
+  (sudetendeutsche-familienforscher.de) – **ověř**. Do dotazu uveď jméno, rok narození, poslední bydliště v Čechách/na Moravě a okres.
+- **České úřední spisy o odsunu a konfiskacích.** Fondy okresních a místních národních výborů z let 1945–1946 (referáty pro odsun, konfiskace, osídlování; např. ONV Ústí nad Labem
+  má v inventáři oddíl o odsunu Němců, fond spravuje SOA Litoměřice). Jsou v okresních archivech a SOA pohraničí; hledej podle obce v archivním katalogu. Které fondy obsahují jmenné soupisy,
+  **ověř** v inventáři nebo dotazem do archivu (zapiš do `archivni_dotazy.md`). Národní archiv: fondy ministerstev (vnitra, ochrany práce a sociální péče) – nevyzkoušeno.
+- **Německá strana (osud po odsunu).** **Lastenausgleichsarchiv Bayreuth (Bundesarchiv)**: akty o vyrovnání škod vyhnanců (adresy, majetek, doba odsunu), **Ostdokumentation (B 198)**
+  a kartotéky Heimatortskartei (B 530). Přístup je písemný (dotaz, dotazník, vysvětlení ochrany údajů; kontakt laa@bundesarchiv.de). **Podle přehledu ze 17. 3. 2026 se dotazy
+  z rodinného bádání bez naléhavosti přijímají až od roku 2028 – ověř na bundesarchiv.de.**
+- **Po válce v Německu/Rakousku:** Arolsen (`arolsen.py`, vysídlené osoby – spíš nuceně nasazení a DP než odsunutí Němci, ale zkus), farní matriky a občanské matriky v nové obci
+  (kde se rodina usadila), Suchdienst (Červený kříž, kirchlicher Suchdienst) – nevyzkoušeno.
+- **Češi, kteří odešli z pohraničí 1938:** uprchlické a vysídlenecké spisy v okresních archivech a v Národním archivu (např. fondy o péči o uprchlíky a o návratu); návod nemám ověřený.
+  Zeptej se rodiny na doklady (osvědčení o vysídlení, přídělové lístky, čp. nového domu).
+- **Rodina:** doklady z odsunu (seznam zavazadel, odsunový list, Vertriebenenausweis) bývají doma; číslo transportu a stanice nakládky (Verladestation) zkrátí hledání.
+- Údaje o lidech jsou citlivé a osoby mohly žít do nedávna; na web jen se souhlasem rodiny (`soukromi.md`).
+
 ## Příjmení dnes a DNA
 - **Rozšíření příjmení dnes**: kdejsme.cz (počty nositelů po okresech). Rychle ukáže, jestli je příjmení vzácné a kde
   jsou jeho „hnízda“. Při hledání vzdálených příbuzných vyškrtni vlastní rodinu.
