@@ -1,0 +1,98 @@
+---
+// Celý rodokmen: všichni známí předci v jednom stromu (zleva výchozí osoba, doprava starší generace).
+// Rozvržení: listy stromu dostanou řádky po sobě, rodič leží uprostřed mezi svými dětmi. Zvětšení kolečkem myši,
+// posun tažením, tlačítka +/−/celý strom.
+import Base from '../layouts/Base.astro';
+import { byK, href, lineByK, root } from '../lib/data.js';
+
+const BW = 210, BH = 46, GX = 60, GY = 10;
+const nodes = [];
+let row = 0;
+const place = (k, g) => {
+  const p = byK[k];
+  if (!p) return null;
+  const kids = [place(2 * k, g + 1), place(2 * k + 1, g + 1)].filter(Boolean);
+  const y = kids.length ? (kids[0].y + kids[kids.length - 1].y) / 2 : row++ * (BH + GY);
+  const node = { k, g, y, x: g * (BW + GX), p, kids };
+  nodes.push(node);
+  return node;
+};
+place(root?.k ?? 1, 0);
+const maxG = Math.max(0, ...nodes.map((n) => n.g));
+const W = (maxG + 1) * (BW + GX), H = Math.max(BH, row * (BH + GY));
+const lineColor = (k) => {
+  let kk = k;
+  while (kk > 1 && !lineByK[kk]) kk = Math.floor(kk / 2);
+  return lineByK[kk]?.color ?? '#c9a24a';
+};
+const short = (s, n = 27) => (s && s.length > n ? s.slice(0, n - 1) + '…' : s ?? '');
+---
+<Base title="Celý rodokmen">
+  <h1>Celý rodokmen</h1>
+  <p class="lead">Všichni známí předci najednou ({nodes.length} osob, {maxG + 1} generací). Kolečkem myši zvětšíte nebo zmenšíte,
+    tažením posunete, kliknutím na jméno otevřete osobu.</p>
+  <div class="strom-bar">
+    <button type="button" data-z="in">+</button><button type="button" data-z="out">−</button><button type="button" data-z="fit">Celý strom</button>
+  </div>
+  <div class="strom-wrap" id="strom">
+    <svg id="strom-svg" viewBox={`-10 -10 ${W + 20} ${H + 20}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label="Celý rodokmen">
+      {nodes.flatMap((n) => n.kids.map((c) => (
+        <path d={`M${n.x + BW},${n.y + BH / 2} C${n.x + BW + GX / 2},${n.y + BH / 2} ${c.x - GX / 2},${c.y + BH / 2} ${c.x},${c.y + BH / 2}`}
+          fill="none" stroke="var(--line)" stroke-width="1.5" />
+      )))}
+      {nodes.map((n) => (
+        <a href={href.person(n.p.slug)}>
+          <rect x={n.x} y={n.y} width={BW} height={BH} rx="7" fill="var(--paper)" stroke="var(--line)" />
+          <rect x={n.x} y={n.y} width="5" height={BH} rx="2" fill={lineColor(n.k)} />
+          <text x={n.x + 12} y={n.y + 19} font-size="14" font-weight={n.g === 0 ? 700 : 500} fill="var(--ink)">{short(n.p.name)}</text>
+          <text x={n.x + 12} y={n.y + 36} font-size="12" fill="var(--muted)">{short(n.p.years || '', 32)}</text>
+          <title>{n.p.name} {n.p.years}</title>
+        </a>
+      ))}
+    </svg>
+  </div>
+  <p class="small muted">Barevný proužek u jména označuje rod. Na mobilu otevřete raději <a href="/predci/">seznam předků</a>.</p>
+</Base>
+
+<style>
+  .strom-bar { display: flex; gap: .4rem; margin: .5rem 0; }
+  .strom-bar button { border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 6px; padding: .3rem .8rem; cursor: pointer; font-size: 1rem; }
+  .strom-wrap { height: 78vh; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--paper); cursor: grab; touch-action: none; }
+  .strom-wrap.drag { cursor: grabbing; }
+  .strom-wrap svg { width: 100%; height: 100%; display: block; user-select: none; }
+  .strom-wrap a:hover rect:first-child { stroke: var(--accent); stroke-width: 2; }
+</style>
+
+<script>
+  const wrap = document.getElementById('strom');
+  const svg = document.getElementById('strom-svg');
+  if (wrap && svg) {
+    const full = svg.getAttribute('viewBox').split(' ').map(Number);
+    let [x, y, w, h] = full;
+    const set = () => svg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
+    const zoom = (f, cx = 0.5, cy = 0.5) => {
+      const nw = Math.min(full[2] * 2, Math.max(150, w * f)), nh = nw * (h / w);
+      x += (w - nw) * cx; y += (h - nh) * cy; w = nw; h = nh; set();
+    };
+    wrap.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const b = wrap.getBoundingClientRect();
+      zoom(e.deltaY > 0 ? 1.15 : 1 / 1.15, (e.clientX - b.left) / b.width, (e.clientY - b.top) / b.height);
+    }, { passive: false });
+    let drag = null, moved = false;
+    wrap.addEventListener('pointerdown', (e) => { drag = { px: e.clientX, py: e.clientY, x, y }; moved = false; });
+    window.addEventListener('pointermove', (e) => {
+      if (!drag) return;
+      const b = wrap.getBoundingClientRect();
+      const dx = e.clientX - drag.px, dy = e.clientY - drag.py;
+      if (Math.abs(dx) + Math.abs(dy) > 4) { moved = true; wrap.classList.add('drag'); }
+      x = drag.x - dx * (w / b.width); y = drag.y - dy * (h / b.height); set();
+    });
+    window.addEventListener('pointerup', () => { drag = null; wrap.classList.remove('drag'); });
+    wrap.addEventListener('click', (e) => { if (moved) { e.preventDefault(); moved = false; } }, true);
+    document.querySelectorAll('.strom-bar button').forEach((b) => b.addEventListener('click', () => {
+      const z = b.dataset.z;
+      if (z === 'in') zoom(1 / 1.3); else if (z === 'out') zoom(1.3); else { [x, y, w, h] = full; set(); }
+    }));
+  }
+</script>

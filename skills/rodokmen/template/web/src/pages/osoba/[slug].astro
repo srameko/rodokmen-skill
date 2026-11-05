@@ -65,7 +65,7 @@ const path = [...p.path].reverse().filter(Boolean);
   )}
 
   <h2>Předci</h2>
-  <div class="only-desktop"><Pedigree k={p.k} /></div>
+  <div class="only-desktop"><Pedigree k={p.k} /><p class="small"><a href="/strom/">Celý rodokmen se všemi předky (lze zvětšit) →</a></p></div>
   <div class="only-mobile"><MobileTree k={p.k} /></div>
 
   {p.docs.length > 0 && (

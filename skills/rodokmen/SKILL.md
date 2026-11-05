@@ -112,7 +112,7 @@ Cíl: znát co nejvíc o 3–4 generacích nazpět, než sáhneš do matrik.
   FamilySearch) jsou **jen vodítko**, stav `mh`, nikdy `doc`.
 
 ## Fáze 2 – Matriky, generace po generaci
-Podrobný postup čtení: `reference/matriky.md`. Portály archivů: `reference/portaly.md`. Metodika: `reference/playbook.md` (EN).
+Podrobný postup čtení: `reference/matriky.md`. Portály archivů: `reference/portaly.md`. Metodika: `reference/playbook.md` (EN). Když matrika mlčí (kmotři, domy, sourozenci, tisk, katastry): `reference/souvislosti.md`.
 
 Základní smyčka pro každou osobu:
 1. **Vyber cíl a začni od nejmladšího zápisu.** Vezmi nejmladšího předka bez dokladu a hledej jeho **nejmladší
@@ -306,6 +306,9 @@ Nedělej to pořád. Postup:
 | `mapa_knihy.py aron/pf/ahmp <kniha> <od> <do> [krok]`, `--vedle --ostre --vyrez …`, `soubory …` | mapa knihy (horní pruhy snímků pod sebou) a montáž sloupce se jmény vedle sebe – orientace v knihách po vsích (`matriky.md`) |
 | `overit.py <snímek> x0,y0,x1,y1 <prefix>` | zápis na dvě čitelné poloviny – ověření čtení (souřadnice = zlomky 0–1) |
 | `napady.py` | náměty na zajímavosti z dat |
+| `fronta.py [--vse]` | předci bez rodičů seřazení od nejlevnějšího dalšího kroku → `pracovni/fronta.md` |
+| `kmotri.py` | síť kmotrů a svědků ze `zaznamy.json` (příjmení u ≥ 2 zápisů) → `pracovni/kmotri.md`; stopa na rodinu matky |
+| `oprav_odkazy.py` | opraví v `data/pribeh.md` odkazy `/osoba/<slug>/`, kterým se po doplnění roku změnila adresa (po `npm run data`) |
 | `vyrez.py <stránka.jpg> <klíč> x0,y0,x1,y1` | výřez do `zdroje/` a `vyrezy/` |
 | `ramecek.py <klíč> x0,y0,x1,y1` | rámeček čteného místa + kontrolní obrázek |
 | `mista.py pridej "Obec"` / `mista.py` | místa pro mapu (souřadnice z OpenStreetMap) |
