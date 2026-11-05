@@ -112,7 +112,7 @@ Cíl: znát co nejvíc o 3–4 generacích nazpět, než sáhneš do matrik.
   FamilySearch) jsou **jen vodítko**, stav `mh`, nikdy `doc`.
 
 ## Fáze 2 – Matriky, generace po generaci
-Podrobný postup čtení: `reference/matriky.md`. Portály archivů: `reference/portaly.md`. Metodika: `reference/playbook.md` (EN). Když matrika mlčí (kmotři, domy, sourozenci, tisk, katastry): `reference/souvislosti.md`.
+Podrobný postup čtení: `reference/matriky.md`. Portály archivů: `reference/portaly.md`. Metodika: `reference/playbook.md` (EN). Odsun Němců z pohraničí 1945–1946: `reference/portaly.md` → „Odsun Němců“. Když matrika mlčí (kmotři, domy, sourozenci, tisk, katastry): `reference/souvislosti.md`.
 
 Základní smyčka pro každou osobu:
 1. **Vyber cíl a začni od nejmladšího zápisu.** Vezmi nejmladšího předka bez dokladu a hledej jeho **nejmladší
@@ -192,6 +192,7 @@ pro každý web (dotaz 1 za 2 s, obrázky 10 za s) pro všechny procesy na poč�
   Kolik stažení z archivu ušetřila, ukáže `python3 -I tools/cache.py stav` (stažené vs. vzaté z disku, po webech).
 
 ### Pomocníci (subagenti) – šetrně
+Podrobná pravidla a hotovou šablonu zadání najdeš v `reference/pomocnici.md`.
 Na velké kolo (např. „projdi 5 svazků a najdi všechny Nováky“) můžeš pustit 2–4 pomocníky paralelně.
 Každému dej přesné zadání (svazek, snímky, koho hledat, formát výsledku: klíč, snímek, souřadnice zápisu, přepis)
 a pravidla výše. Pomocník píše jen do `pracovni/pom_<větev>/`, **do `data/` nikdy**. Zapisuješ ty.
