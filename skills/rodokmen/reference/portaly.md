@@ -368,9 +368,13 @@ Pro předky z pohraničí (Sudety, Slezsko, jižní Morava, Šumava), kteří by
   příjmení, jméno, věk a poslední bydliště). **Skoro úplné listy jsou v okresních archivech podle místa odjezdu** (adresy: cesarch.cz/archivnictvi/adresar-archivu/) – to je cesta,
   kterou lze zkusit v ČR. Přehled transportů 1946 podle data a místa nakládky (Wilhelm Jun, nekompletní, ale velmi dobrý):
   sudetendeutsche-familienforscher.de/wp-content/uploads/2020/05/Verzeichnis_Vertreibungstransporte_1946_V9.pdf – z něj zjistíš datum a stanici.
-- **České úřední spisy o odsunu a konfiskacích.** Fondy okresních a místních národních výborů z let 1945–1946 (referáty pro odsun, konfiskace, osídlování; např. ONV Ústí nad Labem
-  má v inventáři oddíl o odsunu Němců, fond spravuje SOA Litoměřice). Jsou v okresních archivech a SOA pohraničí; hledej podle obce v archivním katalogu. Které fondy obsahují jmenné soupisy,
-  **ověř** v inventáři nebo dotazem do archivu (zapiš do `archivni_dotazy.md`). Archiv bezpečnostních složek (abscr.cz) má regionální policejní spisy „Odsun Němců 1946“ (např. OV SNB Ostrava-město; podle názvu inventáře, obsah neprověřen). Národní archiv: fondy ministerstev (vnitra, ochrany práce a sociální péče) – nevyzkoušeno.
+- **České úřední spisy o odsunu a konfiskacích.** Fondy okresních (ONV) a místních národních výborů z let 1945–1948 mají referáty pro odsun, konfiskace a osídlování.
+  **Ověřeno na příkladu:** úvod k inventáři ONV Ústí nad Labem (usti.cz, fond spravuje SOA Litoměřice) uvádí referát pro konfiskace, byty, válečné škody a odsun Němců
+  a dílčí inventář „Okresní národní výbor Ústí nad Labem (odsun Němců), 1945–1948“ a spisy Internačního střediska. Jmenné soupisy odsunutých podle okresů jsem u dalších fondů **neověřil**;
+  podle jedné diplomové práce (Čadová) existují seznamy Němců řazené podle transportů a čísel domů, přesný fond neznám – hledej v inventáři okresního archivu podle obce nebo se zeptej archivu
+  (zapiš do `archivni_dotazy.md`). Část Němců z odsunu vyňali (smíšená manželství, specialisté, antifašisté), ti zůstali a jsou v matrikách i po 1946.
+  Archiv bezpečnostních složek (abscr.cz) má regionální policejní spisy „Odsun Němců 1946“ (např. OV SNB Ostrava-město; podle názvu inventáře, obsah neprověřen).
+  Národní archiv: fondy ministerstev (vnitra, ochrany práce a sociální péče) – nevyzkoušeno.
 - **Německá strana (osud po odsunu).** **Lastenausgleichsarchiv Bayreuth (Bundesarchiv)** – ověřeno 2026-11 na bundesarchiv.de (stránka Bayreuth): knapp 3 miliony akt o vyrovnání škod vyhnanců
   (majetek, bydliště, doba odchodu), **Ostdokumentation** (sbírka svědectví o vyhnání) a kartotéky **Heimatortskartei** (kartotéky kirchlicher Suchdienst o pohřešovaných civilistech z vyhnaných oblastí,
   „Einwohnerverzeichnis des deutschen Ostens“). Přístup jen písemně s formuláři (dotazník o užití, vysvětlení účelu). **Od 16. 1. 2026 do 31. 12. 2027 vyřizují jen naléhavé dotazy
@@ -378,8 +382,10 @@ Pro předky z pohraničí (Sudety, Slezsko, jižní Morava, Šumava), kteří by
   Literaturu (50 000 svazků, adresáře, Heimatzeitschriften) lze číst v čítárně po domluvě.
 - **Po válce v Německu/Rakousku:** Arolsen (`arolsen.py`, vysídlené osoby – spíš nuceně nasazení a DP než odsunutí Němci, ale zkus), farní matriky a občanské matriky v nové obci
   (kde se rodina usadila), Suchdienst (Červený kříž, kirchlicher Suchdienst) – nevyzkoušeno.
-- **Češi, kteří odešli z pohraničí 1938:** uprchlické a vysídlenecké spisy v okresních archivech a v Národním archivu (např. fondy o péči o uprchlíky a o návratu); návod nemám ověřený.
-  Zeptej se rodiny na doklady (osvědčení o vysídlení, přídělové lístky, čp. nového domu).
+- **Češi a odpůrci nacismu, kteří odešli z pohraničí 1938–1939** (rešerše, nic nevyzkoušeno): literatura a pramenné vodítka: Jan Benda, *Útěky a vyhánění z pohraničí českých zemí 1938–1939* (Karolinum; kapitola o evidenci a rozptylu uprchlíků
+  a o péči o uprchlíky na úrovni okresů), Michal Frankl, *Občané země nikoho* (seznam pramenů zahrnuje fondy Moravského zemského archivu v Brně, např. policejní ředitelství a zemský úřad). Prameny: uprchlické spisy v okresních
+  archivech a policejní spisy (Národní archiv, fond Policejní ředitelství Praha – např. protokol s uprchlíkem z pohraničí, holocaust.cz), u Židů a sociálních demokratů také spisy podpůrných organizací.
+  Konkrétní fondy nemám ověřené; zeptej se rodiny na doklady (uprchlická legitimace, přídělové lístky, nový domov v roce 1938) a pak okresního archivu nového bydliště.
 - **Rodina:** doklady z odsunu (seznam zavazadel, odsunový list, Vertriebenenausweis) bývají doma; číslo transportu a stanice nakládky (Verladestation) zkrátí hledání.
 - Údaje o lidech jsou citlivé a osoby mohly žít do nedávna; na web jen se souhlasem rodiny (`soukromi.md`).
 
