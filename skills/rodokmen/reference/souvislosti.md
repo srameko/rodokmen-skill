@@ -22,7 +22,7 @@ Každý bod je postup, který model zvládne sám. Zdroje jsou jen vodítka; oso
 ## B. Jiné zdroje než matriky
 | Zdroj | Co dá | Kdy |
 |---|---|---|
-| Dobový tisk – Kramerius (`tools/kramerius.py`), ANNO (`tools/anno.py`) | úmrtí, parte, spolky, živnosti, soudní zprávy, Baťovské časopisy | lidé po ~1850 |
+| Dobový tisk – Kramerius (`tools/kramerius.py`), ANNO (`tools/anno.py`) | úmrtí, parte, spolky, živnosti, soudní zprávy, firemní časopisy | lidé po ~1850 |
 | Adresáře a ročenky (Kramerius) | živnostníci, mlynáři, kováři, starostové obcí | 1880–1940 |
 | Berní rula 1654, Soupis poddaných 1651 | jména hospodářů na gruntech | konec matrik kolem 1650 |
 | Tereziánský / josefský / stabilní katastr, indikační skici | majitel podle čísla domu, výměra | 1750–1840 |
@@ -36,5 +36,7 @@ Každý bod je postup, který model zvládne sám. Zdroje jsou jen vodítka; oso
 | Strojové čtení rukopisů (HTR, Transkribus) | plný text celé knihy → hledání jmen bez listování | až budou modely pro kurent |
 
 ## C. Pravidla
+- **Web a archivy jen přes brzdu.** Zdroje z tabulky B čti nástroji ve `tools/` (ty jdou přes `slusne.py`) nebo v prohlížeči s uživatelem;
+  nestahuj je ručně přes `curl`/`urllib` a nehromadně, dodržuj podmínky a `robots.txt` portálu. Citlivé databáze (oběti, vězni) jen se souhlasem (`souhlas`).
 - Tisk, katastr i cizí stromy jsou **doplněk** – osoba se do `osoby.py` zapisuje jen na základě zápisu, ne podle zmínky
   v novinách nebo cizího stromu. U shody jmen odděl „jisté / pravděpodobné / jmenovec“.
