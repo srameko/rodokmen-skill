@@ -351,17 +351,23 @@ Nástroje pro ně hotové nejsou. Postupuj takto a výsledek zapiš do `STAV.md`
 
 ## Odsun Němců z pohraničí 1945–1946 a Češi vysídlení v roce 1938
 Pro předky z pohraničí (Sudety, Slezsko, jižní Morava, Šumava), kteří byli Němci a po válce museli odejít, a pro Čechy, kteří odešli z pohraničí po záboru 1938.
-**Stav: jen rešerše (2026-11), žádný nástroj; údaje označené „ověř“ jsem z webu nečetl celé. Nic z toho nejde stáhnout skriptem, jde o dopisy a prohlížeč.**
+**Stav: rešerše (2026-11), žádný nástroj. Transportní listiny jsou ověřené na webu muzea; ostatní údaje označené „ověř“ jsem celé nečetl. Nic z toho nejde stáhnout skriptem, jde o dopisy, prohlížeč a návštěvu archivu.**
 - **Dvě fáze.** Léto 1945 = takzvaný divoký odsun (vyhánění bez seznamů, zápisy chybí nebo jsou neúplné). 1946 = organizovaný odsun v transportech do
   americké a sovětské okupační zóny. Zachované **transportní listiny** (kdo odjel, kterým transportem a kdy) jsou **z roku 1946, ne z roku 1945**.
 - **Matriky zůstaly v českých archivech.** Německé matriky z odsunutých obcí jsou v archivech pohraničí (SOA Litoměřice, SOA Plzeň/Porta fontium, ZA Opava),
   postup viz příslušné oddíly výše. Ze zápisu zjistíš narození, sňatky a úmrtí do odsunu; **odsun sám a osud po něm v matrice nenajdeš**.
   Pozor: po 1945 se mnohá místa přejmenovala; hledej německý i český název obce i farnosti (převod názvů pomůže katalog obcí GOV, gov.genealogy.net – nevyzkoušeno).
-- **Transportní listiny 1946.** Dotazy přijímá **Sudetendeutsches Archiv / Sudetendeutsches Institut (Mnichov)**: podle jejich informačního listu
-  (sudetendeutsches-archiv.de, „Transportlisten der Vertreibung 1946 – Information für Anfragen“) dává na písemný dotaz jednotlivé informace v omezeném rozsahu;
-  dotaz musí obsahovat úplnou poštovní adresu odesílatele. Sudetendeutsches Museum připravovalo na první pololetí 2026 hledání v digitalizovaných
-  kopiích asi 1000 listin uložených v ČR – **ověř, zda už funguje**. Přehled transportů 1946 (Wilhelm Jun) nabízejí sudetoněmečtí genealogové
-  (sudetendeutsche-familienforscher.de) – **ověř**. Do dotazu uveď jméno, rok narození, poslední bydliště v Čechách/na Moravě a okres.
+- **Transportní listiny 1946** (ověřeno 2026-11 na sudetendeutsches-archiv.de/transportlisten-der-vertreibung-1946/ a v jejich „Hinweise … ab 1.10.2026“).
+  Sudetendeutsches Museum (Mnichov) má digitalizované kopie asi 1290 transportních listin z roku 1946 s kolem milionem jmen: 55–60 % všech transportů a asi 80 % transportů do
+  americké zóny. Originály jsou ve Vojenském ústředním archivu v Praze (německy Zentrales Militärarchiv; jestli jsou dostupné přímo ve VÚA, nevyzkoušeno).
+  **Chybí** transporty do sovětské zóny (v roce 1946 přes 600 transportů, asi 800 000 lidí) a divoký odsun 1945 (žádné listy).
+  **Hledání podle jména jde jen na přístroji v muzeu v Mnichově** (z právních důvodů ne online; od 1. 10. 2026 je jmenně prohledatelných 820 000 záznamů, zbytek jako PDF, po konci výstavy
+  začátkem 2027 dál v Sudetendeutsches Haus). Muzeum **za vás nehledá**; na písemný dotaz pošle sken jednoho vagonu a titulního listu, když uvedeš přesné datum a místo transportu
+  a úplnou poštovní adresu odesílatele. Potřebuješ tedy znát datum a nakládací stanici, nebo hledat osobně či přes známého v Mnichově.
+  Dotaz: Dr. Raimund Paleczek, Sudetendeutsches Institut e.V. / Sudetendeutsches Museum, Hochstraße 8, 81669 München, paleczek@sudetendeutsches-archiv.de (uveď datum transportu,
+  příjmení, jméno, věk a poslední bydliště). **Skoro úplné listy jsou v okresních archivech podle místa odjezdu** (adresy: cesarch.cz/archivnictvi/adresar-archivu/) – to je cesta,
+  kterou lze zkusit v ČR. Přehled transportů 1946 podle data a místa nakládky (Wilhelm Jun, nekompletní, ale velmi dobrý):
+  sudetendeutsche-familienforscher.de/wp-content/uploads/2020/05/Verzeichnis_Vertreibungstransporte_1946_V9.pdf – z něj zjistíš datum a stanici.
 - **České úřední spisy o odsunu a konfiskacích.** Fondy okresních a místních národních výborů z let 1945–1946 (referáty pro odsun, konfiskace, osídlování; např. ONV Ústí nad Labem
   má v inventáři oddíl o odsunu Němců, fond spravuje SOA Litoměřice). Jsou v okresních archivech a SOA pohraničí; hledej podle obce v archivním katalogu. Které fondy obsahují jmenné soupisy,
   **ověř** v inventáři nebo dotazem do archivu (zapiš do `archivni_dotazy.md`). Národní archiv: fondy ministerstev (vnitra, ochrany práce a sociální péče) – nevyzkoušeno.
