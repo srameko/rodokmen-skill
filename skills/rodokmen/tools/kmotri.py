@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 """Síť kmotrů a svědků: kdo se opakuje u více zápisů (kmotři bývali příbuzní).
 
-Použití (z kořene projektu):  python -I -X utf8 tools/kmotri.py  -> výpis + pracovni/kmotri.md
+Použití (z kořene projektu):  python3 -I -X utf8 tools/kmotri.py  -> výpis + pracovni/kmotri.md
 Z každého `shrnuti` v data/zaznamy.json vezme část od slova Kmotr/Kmotři/Svědek/Svědci/Družba (do konce věty)
 a vytáhne jména „Jméno Příjmení“. Příjmení sjednotí na mužský tvar (‑ová → ‑), aby se potkali muži i ženy.
 Vypíše příjmení, která se objeví u ≥ 2 zápisů, a u nich zápisy, obce a role.
 """
-import json, re
+import json, os, re, sys
 from collections import defaultdict
-Z = json.load(open("data/zaznamy.json", encoding="utf8"))
+for _s in (sys.stdout, sys.stderr):   # UTF-8 výstup i na Windows bez -X utf8
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
+try:
+    with open("data/zaznamy.json", encoding="utf-8") as fh:
+        Z = json.load(fh)
+except (OSError, ValueError) as e:
+    sys.exit(f"Nejde číst data/zaznamy.json ({e}). Spouštěj z kořene projektu.")
 Z = Z if isinstance(Z, list) else list(Z.values())
 VELKE = "A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ"
 jmeno = re.compile(rf"\b([{VELKE}][a-záčďéěíňóřšťúůýž]+)\s+(?:roz\.\s+)?([{VELKE}][a-záčďéěíňóřšťúůýž]+)")
@@ -24,8 +31,10 @@ def zaklad(p):
 
 vyskyt = defaultdict(list)
 for z in Z:
+    if not isinstance(z, dict) or "klic" not in z:
+        continue
     for m in role.finditer(z.get("shrnuti", "")):
-        usek = m.group(0)
+        usek = m.group(0)[len(m.group(1)):]   # jména hledáme až za slovem Kmotr/Svědek (jinak by se spojilo se jménem)
         for j, p in jmeno.findall(usek):
             if j in NEJMENA or p in NEJMENA or p in KRESTNI:
                 continue
@@ -36,7 +45,9 @@ for p, v in rad:
     out.append(f"## {p} – {len({k for k, _, _ in v})} zápisů")
     out += [f"- {kdo} ({r}) – {k}" for k, kdo, r in v]
     out.append("")
-open("pracovni/kmotri.md", "w", encoding="utf8").write("\n".join(out))
+os.makedirs("pracovni", exist_ok=True)
+with open("pracovni/kmotri.md", "w", encoding="utf-8", newline="\n") as fh:
+    fh.write("\n".join(out) + "\n")
 print(len(rad), "příjmení u ≥ 2 zápisů; pracovni/kmotri.md")
 for p, v in rad[:40]:
     print(p, len({k for k, _, _ in v}), sorted({k.split("_")[0] for k, _, _ in v}))

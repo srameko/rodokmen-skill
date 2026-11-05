@@ -51,13 +51,13 @@ const short = (s, n = 27) => (s && s.length > n ? s.slice(0, n - 1) + '…' : s 
       ))}
     </svg>
   </div>
-  <p class="small muted">Barevný proužek u jména označuje rod. Na mobilu otevřete raději <a href="/predci/">seznam předků</a>.</p>
+  <p class="small muted">Barevný proužek u jména označuje rod. Na telefonu strom posouvá jeden prst a zvětšují dva; stránku posunete tažením mimo strom. Pohodlněji se čte <a href="/predci/">seznam předků</a>.</p>
 </Base>
 
 <style>
   .strom-bar { display: flex; gap: .4rem; margin: .5rem 0; }
   .strom-bar button { border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 6px; padding: .3rem .8rem; cursor: pointer; font-size: 1rem; }
-  .strom-wrap { height: 78vh; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--paper); cursor: grab; touch-action: none; }
+  .strom-wrap { height: 70vh; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--paper); cursor: grab; touch-action: none; }
   .strom-wrap.drag { cursor: grabbing; }
   .strom-wrap svg { width: 100%; height: 100%; display: block; user-select: none; }
   .strom-wrap a:hover rect:first-child { stroke: var(--accent); stroke-width: 2; }
@@ -69,7 +69,12 @@ const short = (s, n = 27) => (s && s.length > n ? s.slice(0, n - 1) + '…' : s 
   if (wrap && svg) {
     const full = svg.getAttribute('viewBox').split(' ').map(Number);
     let [x, y, w, h] = full;
-    const set = () => svg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
+    const set = () => {
+      // posun nesmí strom odvést mimo obraz (aspoň čtvrtina zůstane vidět)
+      x = Math.min(full[0] + full[2] - w * 0.25, Math.max(full[0] - w * 0.75, x));
+      y = Math.min(full[1] + full[3] - h * 0.25, Math.max(full[1] - h * 0.75, y));
+      svg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
+    };
     const zoom = (f, cx = 0.5, cy = 0.5) => {
       const nw = Math.min(full[2] * 2, Math.max(150, w * f)), nh = nw * (h / w);
       x += (w - nw) * cx; y += (h - nh) * cy; w = nw; h = nh; set();
@@ -79,16 +84,36 @@ const short = (s, n = 27) => (s && s.length > n ? s.slice(0, n - 1) + '…' : s 
       const b = wrap.getBoundingClientRect();
       zoom(e.deltaY > 0 ? 1.15 : 1 / 1.15, (e.clientX - b.left) / b.width, (e.clientY - b.top) / b.height);
     }, { passive: false });
-    let drag = null, moved = false;
-    wrap.addEventListener('pointerdown', (e) => { drag = { px: e.clientX, py: e.clientY, x, y }; moved = false; });
-    window.addEventListener('pointermove', (e) => {
-      if (!drag) return;
-      const b = wrap.getBoundingClientRect();
-      const dx = e.clientX - drag.px, dy = e.clientY - drag.py;
-      if (Math.abs(dx) + Math.abs(dy) > 4) { moved = true; wrap.classList.add('drag'); }
-      x = drag.x - dx * (w / b.width); y = drag.y - dy * (h / b.height); set();
+    // ukazatele: jeden prst/myš posouvá, dva prsty zvětšují (pinch)
+    const ptr = new Map();
+    let drag = null, moved = false, pinch = 0;
+    const dist = () => { const [a, b] = [...ptr.values()]; return Math.hypot(a.x - b.x, a.y - b.y); };
+    wrap.addEventListener('pointerdown', (e) => {
+      ptr.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (ptr.size === 1) { drag = { px: e.clientX, py: e.clientY, x, y }; moved = false; }
+      else if (ptr.size === 2) { drag = null; pinch = dist(); moved = true; }
     });
-    window.addEventListener('pointerup', () => { drag = null; wrap.classList.remove('drag'); });
+    window.addEventListener('pointermove', (e) => {
+      if (!ptr.has(e.pointerId)) return;
+      ptr.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      const b = wrap.getBoundingClientRect();
+      if (ptr.size === 2 && pinch) {
+        const d = dist(), [a, c] = [...ptr.values()];
+        zoom(pinch / d, ((a.x + c.x) / 2 - b.left) / b.width, ((a.y + c.y) / 2 - b.top) / b.height);
+        pinch = d;
+      } else if (drag) {
+        const dx = e.clientX - drag.px, dy = e.clientY - drag.py;
+        if (Math.abs(dx) + Math.abs(dy) > 4) { moved = true; wrap.classList.add('drag'); }
+        x = drag.x - dx * (w / b.width); y = drag.y - dy * (h / b.height); set();
+      }
+    });
+    const konec = (e) => {
+      ptr.delete(e.pointerId);
+      if (ptr.size < 2) pinch = 0;
+      if (ptr.size === 0) { drag = null; wrap.classList.remove('drag'); }
+    };
+    window.addEventListener('pointerup', konec);
+    window.addEventListener('pointercancel', konec);
     wrap.addEventListener('click', (e) => { if (moved) { e.preventDefault(); moved = false; } }, true);
     document.querySelectorAll('.strom-bar button').forEach((b) => b.addEventListener('click', () => {
       const z = b.dataset.z;
